@@ -7,169 +7,212 @@
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #fcf9f2;
-            color: #333;
+            background-color: #ffffff; 
+            color: #2c3e50;
             margin: 0;
+            padding: 0;
+        }
+
+        /* ДЭЭД ХЕСЕГ (Elegant slate-blue layout) */
+        .hero-header {
+            background-color: #2d3b45; 
+            color: #ffffff;
+            text-align: center;
+            padding: 60px 20px;
+        }
+        .hero-header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        .hero-header .subtitle {
+            font-style: italic;
+            color: #dfa86c; /* Warm Gold */
+            font-size: 1.2rem;
+            margin-top: 10px;
+            margin-bottom: 0;
+        }
+
+        .menu-container {
+            max-width: 800px;
+            margin: 40px auto;
             padding: 20px;
         }
-        .menu-container {
-            max-width: 600px;
-            margin: 40px auto;
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            border-top: 8px solid #b83b1d; /* Уламжлалт улаан өнгө */
-        }
-        h1 {
+
+        .section-title {
+            font-size: 1.8rem;
+            color: #2d3b45;
             text-align: center;
-            color: #b83b1d;
-            margin-bottom: 5px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .subtitle {
-            text-align: center;
-            font-style: italic;
-            color: #666;
+            margin-top: 40px;
             margin-bottom: 30px;
         }
-        .section-title {
-            font-size: 1.4rem;
-            color: #1a3c6d; /* Хөх өнгө */
-            border-bottom: 2px solid #eee;
-            padding-bottom: 5px;
-            margin-top: 35px;
-            font-weight: bold;
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 2px;
+            background-color: #dfa86c;
+            margin: 8px auto 0 auto;
         }
+
+        /* 2-Column Grid for Items */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        @media (max-width: 600px) {
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         .menu-block {
-            margin: 25px 0;
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            background: #ffffff;
         }
+        
+        /* PHOTO CONTAINER STYLING */
+        .food-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 12px;
+            background-color: #eef2f5; /* Light gray box until you add a photo */
+            border: 2px dashed #b2bec3; /* Dashed line layout box */
+        }
+        
         .menu-item {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
+            border-bottom: 1px dotted #ccc;
+            padding-bottom: 4px;
         }
         .item-name {
-            font-weight: bold;
+            font-weight: 600;
             font-size: 1.1rem;
+            color: #2d3b45;
         }
         .item-price {
-            color: #b83b1d;
+            color: #dfa86c;
             font-weight: bold;
             font-size: 1.1rem;
-        }
-        .food-img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin-top: 5px;
-            background-color: #eee;
+            white-space: nowrap;
         }
     </style>
 </head>
 <body>
 
-    <div class="menu-container">
+    <div class="hero-header">
         <h1>Монгол Үндэсний Ресторан</h1>
         <p class="subtitle">Уламжлалт Амт чанар, Сэтгэл ханамж</p>
+    </div>
+
+    <div class="menu-container">
 
         <!-- 1. ҮНДСЭН ХООЛ -->
         <div class="section-title">1. Үндсэн хоол</div>
         
-        <div class="menu-block">
-            <div class="menu-item">
-                <span class="item-name">Жигнэсэн бууз</span>
-                <span class="item-price">20,000 ₮</span>
+        <div class="menu-grid">
+            <div class="menu-block">
+                <!-- PHOTO PLACEHOLDER: Put your image URL inside src="" below -->
+                <img class="food-img" src="" alt="Жигнэсэн бууз">
+                <div class="menu-item">
+                    <span class="item-name">Жигнэсэн бууз</span>
+                    <span class="item-price">20,000 ₮</span>
+                </div>
             </div>
-            <img class="food-img" src="https://unsplash.com" alt="Жигнэсэн бууз">
+
+            <div class="menu-block">
+                <img class="food-img" src="" alt="Цуйван">
+                <div class="menu-item">
+                    <span class="item-name">Цуйван</span>
+                    <span class="item-price">16,000 ₮</span>
+                </div>
+            </div>
+
+            <div class="menu-block">
+                <img class="food-img" src="" alt="Хуушуур бууз сет">
+                <div class="menu-item">
+                    <span class="item-name">Хуушуур бууз сет</span>
+                    <span class="item-price">40,000 ₮</span>
+                </div>
+            </div>
+
+            <div class="menu-block">
+                <img class="food-img" src="" alt="Банштай шөл">
+                <div class="menu-item">
+                    <span class="item-name">Банштай шөл</span>
+                    <span class="item-price">20,000 ₮</span>
+                </div>
+            </div>
+
+            <div class="menu-block">
+                <img class="food-img" src="" alt="Хорхог сет">
+                <div class="menu-item">
+                    <span class="item-name">Хорхог сет</span>
+                    <span class="item-price">50,000 ₮</span>
+                </div>
+            </div>
+
+            <div class="menu-block">
+                <img class="food-img" src="" alt="Чанасан мах">
+                <div class="menu-item">
+                    <span class="item-name">Чанасан мах</span>
+                    <span class="item-price">40,000 ₮</span>
+                </div>
+            </div>
         </div>
 
-        <div class="menu-block">
-            <div class="menu-item">
-                <span class="item-name">Цуйван</span>
-                <span class="item-price">16,000 ₮</span>
-            </div>
-            <img class="food-img" src="https://unsplash.com" alt="Цуйван">
-        </div>
-
-        <div class="menu-block">
-            <div class="menu-item">
-                <span class="item-name">Хуушуур бууз сет</span>
-                <span class="item-price">40,000 ₮</span>
-            </div>
-            <img class="food-img" src="https://unsplash.com" alt="Хуушуур бууз сет">
-        </div>
-
-        <div class="menu-block">
-            <div class="menu-item">
-                <span class="item-name">Банштай шөл</span>
-                <span class="item-price">20,000 ₮</span>
-            </div>
-            <img class="food-img" src="https://unsplash.com" alt="Банштай шөл">
-        </div>
-
-        <div class="menu-block">
-            <div class="menu-item">
-                <span class="item-name">Хорхог сет</span>
-                <span class="item-price">50,000 ₮</span>
-            </div>
-            <img class="food-img" src="https://unsplash.com" alt="Хорхог сет">
-        </div>
-
-        <div class="menu-block">
-            <div class="menu-item">
-                <span class="item-name">Чанасан мах</span>
-                <span class="item-price">40,000 ₮</span>
-            </div>
-            <img class="food-img" src="https://unsplash.com" alt="Чанасан мах">
-        </div>
         <!-- 2. ДАГАЛДАХ ХОOЛ, ЦАЙ -->
         <div class="section-title">2. Дагалдах хоол, цай</div>
 
-        <div class="menu-block">
-            <div class="menu-item">
-                <span class="item-name">Нийслэл салад</span>
-                <span class="item-price">14,000 ₮</span>
+        <div class="menu-grid">
+            <div class="menu-block">
+                <img class="food-img" src="" alt="Нийслэл салад">
+                <div class="menu-item">
+                    <span class="item-name">Нийслэл салад</span>
+                    <span class="item-price">14,000 ₮</span>
+                </div>
             </div>
-            <img class="food-img" src="https://unsplash.com" alt="Нийслэл салад">
-        </div>
 
-        <div class="menu-block">
-            <div class="menu-item">
-                <span class="item-name">Ногооны салад</span>
-                <span class="item-price">14,000 ₮</span>
+            <div class="menu-block">
+                <img class="food-img" src="" alt="Ногооны салад">
+                <div class="menu-item">
+                    <span class="item-name">Ногооны салад</span>
+                    <span class="item-price">14,000 ₮</span>
+                </div>
             </div>
-            <img class="food-img" src="https://unsplash.com" alt="Ногооны салад">
-        </div>
 
-        <div class="menu-block">
-            <div class="menu-item">
-                <span class="item-name">Сүүтэй цай</span>
-                <span class="item-price">2,000 ₮</span>
+            <div class="menu-block">
+                <img class="food-img" src="" alt="Сүүтэй цай">
+                <div class="menu-item">
+                    <span class="item-name">Сүүтэй цай</span>
+                    <span class="item-price">2,000 ₮</span>
+                </div>
             </div>
-            <img class="food-img" src="https://unsplash.com" alt="Сүүтэй цай">
-        </div>
 
-        <div class="menu-block">
-            <div class="menu-item">
-                <span class="item-name">Ундаа</span>
-                <span class="item-price">3,000 ₮</span>
+            <div class="menu-block">
+                <img class="food-img" src="" alt="Ундаа">
+                <div class="menu-item">
+                    <span class="item-name">Ундаа</span>
+                    <span class="item-price">3,000 ₮</span>
+                </div>
             </div>
-            <img class="food-img" src="https://unsplash.com" alt="Ундаа">
-        </div>
 
-        <div class="menu-block">
-            <div class="menu-item">
-                <span class="item-name">Үзэмний шүүс</span>
-                <span class="item-price">3,000 ₮</span>
+            <div class="menu-block">
+                <img class="food-img" src="" alt="Үзэмний шүүс">
+                <div class="menu-item">
+                    <span class="item-name">Үзэмний шүүс</span>
+                    <span class="item-price">3,000 ₮</span>
+                </div>
             </div>
-            <img class="food-img" src="https://unsplash.com" alt="Үзэмний шүүс">
         </div>
+        
     </div>
 
 </body>
