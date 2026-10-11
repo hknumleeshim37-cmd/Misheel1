@@ -4,101 +4,181 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Монгол Үндэсний Ресторан</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
-    body { font-family: 'Segoe UI', Tahoma, sans-serif; color: #2c3e50; margin: 0; }
+    :root {
+      --slate: #2d3b45;
+      --gold: #dfa86c;
+      --text: #2c3e50;
+    }
 
-    .hero-header { background: #2d3b45; color: #fff; text-align: center; padding: 60px 20px; }
-    .hero-header h1 { margin: 0; font-size: 2.5rem; letter-spacing: 2px; text-transform: uppercase; }
+    * { box-sizing: border-box; }
 
-    .menu-container { max-width: 800px; margin: 40px auto; padding: 20px; }
+    body {
+      margin: 0;
+      background: #ffffff;
+      color: var(--text);
+      font-family: 'Montserrat', 'Segoe UI', Tahoma, sans-serif;
+    }
 
-    .section-title { font-size: 1.8rem; color: #2d3b45; text-align: center; margin: 40px 0 30px; }
-    .section-title::after { content: ''; display: block; width: 60px; height: 2px; background: #dfa86c; margin: 8px auto 0; }
+    /* Дээд хэсэг */
+    .hero {
+      background: var(--slate);
+      color: #fff;
+      text-align: center;
+      padding: 70px 20px;
+    }
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(1.6rem, 5vw, 2.6rem);
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
 
-    .menu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
-    @media (max-width: 600px) { .menu-grid { grid-template-columns: 1fr; } }
+    /* Цэс */
+    .menu {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 50px 20px 70px;
+    }
 
-    .food-img { width: 100%; height: 200px; object-fit: cover; border-radius: 4px;
-                margin-bottom: 12px; background: #e5e5e5; }
+    .section-title {
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: var(--slate);
+      text-align: center;
+      margin: 50px 0 34px;
+    }
+    .section-title:first-child { margin-top: 0; }
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 2px;
+      background: var(--gold);
+      margin: 12px auto 0;
+    }
 
-    .menu-item { display: flex; justify-content: space-between; border-bottom: 1px dotted #ccc; padding-bottom: 4px; }
-    .item-name { font-weight: 600; font-size: 1.1rem; }
-    .item-price { color: #dfa86c; font-weight: bold; white-space: nowrap; }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px 32px;
+    }
+    @media (max-width: 600px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+
+    .dish img {
+      display: block;
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-bottom: 14px;
+      background: #e8e8e8;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    }
+
+    .dish-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      border-bottom: 1px dotted #bbb;
+      padding-bottom: 6px;
+    }
+    .dish-name {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--slate);
+    }
+    .dish-price {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--gold);
+      white-space: nowrap;
+    }
   </style>
 </head>
 <body>
 
-  <div class="hero-header">
+  <header class="hero">
     <h1>Монгол Үндэсний Ресторан</h1>
-  </div>
+  </header>
 
-  <div class="menu-container">
+  <main class="menu">
 
-    <div class="section-title">1. Үндсэн хоол</div>
-    <div class="menu-grid">
+    <h2 class="section-title">Үндсэн хоол</h2>
+    <div class="grid">
 
-      <div>
-        <img class="food-img" src="images/buuz.jpg" alt="Жигнэсэн бууз">
-        <div class="menu-item"><span class="item-name">Жигнэсэн бууз</span><span class="item-price">20,000 ₮</span></div>
+      <div class="dish">
+        <img src="images/buuz.jpg" alt="Жигнэсэн бууз" loading="lazy">
+        <div class="dish-info"><span class="dish-name">Жигнэсэн бууз</span><span class="dish-price">20,000 ₮</span></div>
       </div>
 
-      <div>
-        <img class="food-img" src="images/tsuivan.jpg" alt="Цуйван">
-        <div class="menu-item"><span class="item-name">Цуйван</span><span class="item-price">16,000 ₮</span></div>
+      <div class="dish">
+        <img src="images/tsuivan.jpg" alt="Цуйван" loading="lazy">
+        <div class="dish-info"><span class="dish-name">Цуйван</span><span class="dish-price">16,000 ₮</span></div>
       </div>
 
-      <div>
-        <img class="food-img" src="images/khuushuur.jpg" alt="Хуушуур бууз сет">
-        <div class="menu-item"><span class="item-name">Хуушуур бууз сет</span><span class="item-price">40,000 ₮</span></div>
+      <div class="dish">
+        <img src="images/khuushuur.jpg" alt="Хуушуур бууз сет" loading="lazy">
+        <div class="dish-info"><span class="dish-name">Хуушуур бууз сет</span><span class="dish-price">40,000 ₮</span></div>
       </div>
 
-      <div>
-        <img class="food-img" src="images/banshtai-shol.jpg" alt="Банштай шөл">
-        <div class="menu-item"><span class="item-name">Банштай шөл</span><span class="item-price">20,000 ₮</span></div>
+      <div class="dish">
+        <img src="images/banshtai-shol.jpg" alt="Банштай шөл" loading="lazy">
+        <div class="dish-info"><span class="dish-name">Банштай шөл</span><span class="dish-price">20,000 ₮</span></div>
       </div>
 
-      <div>
-        <img class="food-img" src="images/khorkhog.jpg" alt="Хорхог сет">
-        <div class="menu-item"><span class="item-name">Хорхог сет</span><span class="item-price">50,000 ₮</span></div>
+      <div class="dish">
+        <img src="images/khorkhog.jpg" alt="Хорхог сет" loading="lazy">
+        <div class="dish-info"><span class="dish-name">Хорхог сет</span><span class="dish-price">50,000 ₮</span></div>
       </div>
 
-      <div>
-        <img class="food-img" src="images/chanasan-makh.jpg" alt="Чанасан мах">
-        <div class="menu-item"><span class="item-name">Чанасан мах</span><span class="item-price">40,000 ₮</span></div>
+      <div class="dish">
+        <img src="images/chanasan-makh.jpg" alt="Чанасан мах" loading="lazy">
+        <div class="dish-info"><span class="dish-name">Чанасан мах</span><span class="dish-price">40,000 ₮</span></div>
+      </div>
+
+    </div>
+
+    <h2 class="section-title">Дагалдах хоол, цай</h2>
+    <div class="grid">
+
+      <div class="dish">
+        <img src="images/niislel-salad.jpg" alt="Нийслэл салад" loading="lazy">
+        <div class="dish-info"><span class="dish-name">Нийслэл салад</span><span class="dish-price">14,000 ₮</span></div>
+      </div>
+
+      <div class="dish">
+        <img src="images/nogoonii-salad.jpg" alt="Ногооны салад" loading="lazy">
+        <div class="dish-info"><span class="dish-name">Ногооны салад</span><span class="dish-price">14,000 ₮</span></div>
+      </div>
+
+      <div class="dish">
+        <img src="images/suutei-tsai.jpg" alt="Сүүтэй цай" loading="lazy">
+        <div class="dish-info"><span class="dish-name">Сүүтэй цай</span><span class="dish-price">2,000 ₮</span></div>
+      </div>
+
+      <div class="dish">
+        <img src="images/undaa.jpg" alt="Ундаа" loading="lazy">
+        <div class="dish-info"><span class="dish-name">Ундаа</span><span class="dish-price">3,000 ₮</span></div>
+      </div>
+
+      <div class="dish">
+        <img src="images/uzemnii-shuus.jpg" alt="Үзэмний шүүс" loading="lazy">
+        <div class="dish-info"><span class="dish-name">Үзэмний шүүс</span><span class="dish-price">3,000 ₮</span></div>
       </div>
 
     </div>
 
-    <div class="section-title">2. Дагалдах хоол, цай</div>
-    <div class="menu-grid">
-
-      <div>
-        <img class="food-img" src="images/niislel-salad.jpg" alt="Нийслэл салад">
-        <div class="menu-item"><span class="item-name">Нийслэл салад</span><span class="item-price">14,000 ₮</span></div>
-      </div>
-
-      <div>
-        <img class="food-img" src="images/nogoonii-salad.jpg" alt="Ногооны салад">
-        <div class="menu-item"><span class="item-name">Ногооны салад</span><span class="item-price">14,000 ₮</span></div>
-      </div>
-
-      <div>
-        <img class="food-img" src="images/suutei-tsai.jpg" alt="Сүүтэй цай">
-        <div class="menu-item"><span class="item-name">Сүүтэй цай</span><span class="item-price">2,000 ₮</span></div>
-      </div>
-
-      <div>
-        <img class="food-img" src="images/undaa.jpg" alt="Ундаа">
-        <div class="menu-item"><span class="item-name">Ундаа</span><span class="item-price">3,000 ₮</span></div>
-      </div>
-
-      <div>
-        <img class="food-img" src="images/uzemnii-shuus.jpg" alt="Үзэмний шүүс">
-        <div class="menu-item"><span class="item-name">Үзэмний шүүс</span><span class="item-price">3,000 ₮</span></div>
-      </div>
-
-    </div>
-  </div>
+  </main>
 
 </body>
 </html>
