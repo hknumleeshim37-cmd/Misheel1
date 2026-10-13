@@ -1,2 +1,1 @@
-# Misheel1
-12A M.Misheel biy daalt 
+# 12a M.Misheel biy daalt
